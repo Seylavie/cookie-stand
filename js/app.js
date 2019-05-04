@@ -20,7 +20,11 @@ var hoursOfOperation = ["6am" , "7am" , "8am" , "9am" , "10am" , "11am" , "12am"
 var additionalOpHours = []; // to note additional hours at each location
 var scheduleWorkHours = []; // to note scheduled hours at each location
 var actualWorkHours = []; // to note actual hours worked at each location
+var maxCookies;
+var minCookies;
+var av
 //calculate a simulated number of sales
+
 
 var firstAndPike = {
     minCookies: 23,
@@ -30,15 +34,19 @@ var firstAndPike = {
     actualWorkHours:[],
     scheduleWorkHours:[],
     additionalOpHours:[],
-    randomCust: function() {
-        return math.floor( math.random() * (this.maxCookies - this.minCookies + 1) ) + this.minCookies;
-    },
-    hourlyCookiesPurchase: function() {
-            //  return this.;
-    }
+    randomCust: calcRandCust,
+//     averageCookiesHours: function() {
+//         return (randomCust() * this.AvgCookieSold);
+//     var hourlyCookiesSold = averageCookies();
+//     },
+//     hourlyCookiesPurchase: function() {
+//        for ( var hoursofoperation = i; i < hoursofoperation.length; i++){
+//            return hourlyCookiesPurchase (averageCookies * randomCust);
+//     } console.log(hourlyCookiesPurchase);
+// }, 
 };
 
-
+ 
  
  var seaTacAirport = {
     minCookies: 3,
@@ -48,9 +56,12 @@ var firstAndPike = {
     actualWorkHours:[],
     scheduleWorkHours:[],
     additionalOpHours:[],
-    hourlyCookiesPurchase: function() {
-      //  return this.;      
-    },
+    randomCust: calcRandCust,
+    // averageCookiesHours: function() {
+    //     return (randomCust() * this.AvgCookieSold);
+    // //hourlyCookiesPurchase: function() {
+    //   //  return this.;      
+    // },
 };
 
 var seattleCenter = {
@@ -61,9 +72,12 @@ var seattleCenter = {
     actualWorkHours:[],
     scheduleWorkHours:[],
     additionalOpHours:[],
-    hourlyCookiesPurchase: function() {
-        //  return this.;  
-    }
+    randomCust: calcRandCust,
+    // averageCookiesHours: function() {
+    //     return (randomCust() * this.AvgCookieSold);
+    // //hourlyCookiesPurchase: function() {
+    //     //  return this.;  
+    //}
 };
 
 var capitolHill = { 
@@ -74,9 +88,12 @@ var capitolHill = {
     actualWorkHours:[],
     scheduleWorkHours:[],
     additionalOpHours:[],
-    hourlyCookiesPurchase: function() {
-         //  return this.;   
-    }
+    randomCust: calcRandCust,
+    // averageCookiesHours: function() {
+    //     return (randomCust() * this.AvgCookieSold);
+    // //hourlyCookiesPurchase: function() {
+    //      //  return this.;   
+    // }
 };
 
 var alki = {
@@ -87,9 +104,16 @@ var alki = {
     actualWorkHours:[],
     scheduleWorkHours:[],
     additionalOpHours:[],
-    hourlyCookiesPurchase: function() {
-      //  return this.;
+    randomCust: calcRandCust,
+    // averageCookiesHours: function() {
+    //     return (randomCust() * this.AvgCookieSold);
+    // //hourlyCookiesPurchase: function() {
+    //   //  return this.;
     }
 };
 
-
+function calcRandCust () {
+var randCust= Math.floor( Math.random() * (this.maxCookies - this.minCookies + 1) ) + this.minCookies;
+console.log (randCust);
+return randCust;
+};
