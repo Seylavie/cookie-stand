@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name=" viewport" content="width=device-width">
+    <link href="css/style3.css" rel="stylesheet" type="text/css">
+    <title>Add New Location Form</title>
+</head>
+<body>
+<div class="form">
+ <form id="new-location-form">
+    <fieldset>
+        <legend> Add New Location Form</legend>
+
+        <label for="locationAddress"> New Location Address</label>
+        <input type="text" name="location-field" id="location" required/>
+
+        <label for="minimumCookies">Required Minimun No. of Cookies Per Hour </label>
+        <input type="text" name="mininput-field" id="maxin" required/>
+
+        <label for="maximumCookies">Required Maximum No. of Cookies Per Hour </label>
+        <input type="text" name="maxoutput-field" id="maxout" required/>
+
+        <label for="averageCookiesReqd">Calculate Average No. Of Cookies Purchase Per Customer</label>
+        <input type="text" name="location-field" id="location" required/>
+
+        <button type="submit"> Add Location</button>
+        <button type="reset">Reset</button>
+    </fieldset>
+ </form>
+</div>
+var newLocationName = event.target.location-field.value;
+var maximumOutput = event.target.maxoutput-field.value;
+var minimunOutput = event.target.minCust.value;
+var avgCookieOutput = event.target.avgCookies.value;
+
+    <table id="New Location Output Forecast">
+        <tr>
+            <th>Location Output Forecast</th>
+            <th>Location Address</th>
+            <th>Mininum Customers Per Hour</th>
+            <th>Maximum Customers Per Hour</th>
+            <th>Average Cookies Purchased Per Customer</th>
+        </tr>
+    </table>
+<!--         
+        var firstAndPike = {
+            minCookies: 23,
+            maxCookies: 65,
+            avgCookiesSold: 6.3," -->
+
+
+
+
+
+
+
+ <script src="js/app.js></script>"
+</body>
+</html>
