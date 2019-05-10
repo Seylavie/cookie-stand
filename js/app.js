@@ -1,20 +1,4 @@
 "use strict";
-console.log("hello");
-// Declare a variable named locations
-//create a prompt to input the locations
-//console.log any input received from the prompt
-//Create an array with the names of the locations of each franchise and assign it to location
-//Create objects and object literals for each location based on the below attributes
-//Create a variable called numOfCookies to note amount of cookies required daily per location
-//Create a variable called operationHours to specify opening hours
-//Create a varibale called uniqFactHours to specify variance in operation hours
-//create a function called cookieCalc to calculate no of cookies per day
-//Create a variable to store min number of customers per hour
-//Create a variable to store max number of customer per hour
-//Create a variable to store number of cookies purchased per customer.
-//Pat need to be able to add and remove locations---daily projection report (tally)
-//Allow modification of input numbers for each location based on --day of week, special event, other unique factor
-//create a public URL- create logo for Pat's Salmon Cookies + select colour scheme and find additional images
 
 var hoursOfOperation = [
   "6am",
@@ -33,10 +17,10 @@ var hoursOfOperation = [
   "7pm",
   "8pm"
 ];
+
 var maxCookies;
 var minCookies;
 var cookieSchedule;
-//calculate a simulated number of sales
 
 var firstAndPike = {
   minCookies: 23,
@@ -205,13 +189,51 @@ function calcRandCust() {
 
 
 
-firstAndPike.hourlyCookiesPurchase();
-firstAndPike.renderlist("cookieSchedule1");
-seaTacAirport.hourlyCookiesPurchase();
-seaTacAirport.renderlist("cookieSchedule2");
-seattleCenter.hourlyCookiesPurchase();
-seattleCenter.renderlist("cookieSchedule3");
-capitolHill.hourlyCookiesPurchase();
-capitolHill.renderlist("cookieSchedule4");
-alki.hourlyCookiesPurchase();
-alki.renderlist("cookieSchedule5");
+// firstAndPike.hourlyCookiesPurchase();
+// firstAndPike.renderlist("cookieSchedule1");
+// seaTacAirport.hourlyCookiesPurchase();
+// seaTacAirport.renderlist("cookieSchedule2");
+// seattleCenter.hourlyCookiesPurchase();
+// seattleCenter.renderlist("cookieSchedule3");
+// capitolHill.hourlyCookiesPurchase();
+// capitolHill.renderlist("cookieSchedule4");
+// alki.hourlyCookiesPurchase();
+// alki.renderlist("cookieSchedule5");
+
+
+function Location(minCookies,maxCookies,avgCookiesSold){
+    this.minCookies = minCookies;
+    this.maxCookies = maxCookies;
+    this.avgCookiesSold = avgCookiesSold;
+    this.hourlyCookies = [];
+}
+//  for each method repeat the below function definition;
+Location.prototype.amtCookieHour = function() {
+  return Math.ceil(this.randomCust(), this.avgCookieSold);
+} 
+
+// Location        | Min / Cust | Max / Cust | Avg Cookie / Sale
+// ----------------|------------|------------|-------------------
+// 1st and Pike      |      23    |     65     |        6.3
+// SeaTac Airport  |      3     |     24     |        1.2
+// Seattle Center     |      11    |     38     |        3.7
+// Capitol Hill |      20    |     38     |        2.3
+// Alki            |      2     |     16     |        4.6
+
+ 
+var locationData = [[23,65,6.3],[3,24,1.2],[11,38,3.7],[20,38,2.3],[2,16,4.6]];
+var locations = [];
+for (var i= 0; i < locationData.length; i++) {
+  locations.push(new Location(locationData[i][0],locationData[i][1],locationData[i][2]));
+console.log(locations);
+}
+// var submitButtonEl.addEventlistener('submit',function(event){
+// Element.addEventlistener('click',);
+
+// var newLocationName = event.target.location-field.value;
+// var maximumOutput = event.target.maxoutput-field.value;
+// var minimunOutput = event.target.minCust.value;
+// var avgCookieOutput = event.target.avgPerCust.value;
+
+// console.log(event.target);
+// console.log(`9 jj k  Updated Output Forecast Per Location`)
